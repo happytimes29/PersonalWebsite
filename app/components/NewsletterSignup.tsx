@@ -1,21 +1,33 @@
 'use client';
 
 import { useState } from 'react';
+import { subscribeToNewsletter } from '@/app/actions/subscribe';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    setErrorMessage('');
 
-    // TODO: 整合實際的電子報服務 (如 ConvertKit, Mailchimp 等)
-    setTimeout(() => {
-      console.log('Subscribing email:', email);
-      setStatus('success');
-      setEmail('');
-    }, 1000);
+    try {
+      const result = await subscribeToNewsletter(email);
+
+      if (result.success) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setErrorMessage(result.error || '訂閱失敗，請稍後再試');
+      }
+    } catch (error) {
+      console.error('訂閱錯誤:', error);
+      setStatus('error');
+      setErrorMessage('訂閱失敗，請稍後再試');
+    }
   };
 
   return (
@@ -43,15 +55,15 @@ export default function NewsletterSignup() {
             disabled={status === 'loading' || status === 'success'}
             className="bg-black text-white px-8 py-4 text-lg font-medium hover:opacity-90 transition-opacity duration-200 disabled:opacity-50"
           >
-            {status === 'loading' ? '訂閱中...' : status === 'success' ? '已訂閱!' : '訂閱'}
+            {status === 'loading' ? '發送中...' : status === 'success' ? '已訂閱!' : '訂閱'}
           </button>
         </form>
 
         {status === 'success' && (
-          <p className="mt-4 text-black">感謝訂閱！請查收確認郵件。</p>
+          <p className="mt-4 text-black">感謝訂閱！請檢查您的信箱。</p>
         )}
         {status === 'error' && (
-          <p className="mt-4 text-black">訂閱失敗，請稍後再試。</p>
+          <p className="mt-4 text-red-600">{errorMessage}</p>
         )}
       </div>
     </div>
