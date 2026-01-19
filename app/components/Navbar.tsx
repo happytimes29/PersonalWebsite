@@ -14,22 +14,22 @@ export default function Navbar() {
 
           <div className="flex gap-8">
             <Link
-              href="/"
-              className="text-black text-lg hover:opacity-70 transition-opacity duration-200"
-            >
-              Home
-            </Link>
-            <Link
               href="/writing"
               className="text-black text-lg hover:opacity-70 transition-opacity duration-200"
             >
               Writing
             </Link>
             <Link
-              href="/products"
+              href="/projects"
               className="text-black text-lg hover:opacity-70 transition-opacity duration-200"
             >
-              Products
+              Projects
+            </Link>
+            <Link
+              href="/about"
+              className="text-black text-lg hover:opacity-70 transition-opacity duration-200"
+            >
+              About
             </Link>
           </div>
         </div>

@@ -8,7 +8,9 @@
       "Skill(document-skills:web-artifacts-builder)",
       "Skill(document-skills:doc-coauthoring)",
       "Bash(npm install:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

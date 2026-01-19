@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import NewsletterSignup from './components/NewsletterSignup';
-import ProductList from './components/ProductList';
+import ProjectCard from './components/ProjectCard';
 
 // 測試用文章數據
 const recentArticles = [
   {
     slug: 'build-one-person-business',
-    title: '如何用系統化思維建立你的一人公司',
+    title: '如何用系統化思維建立你的 JK space',
     date: '2024-01-15',
     excerpt: '多數人創業失敗的原因不是缺乏技能，而是缺乏系統。本文將帶你建立可持續的創業框架。',
   },
@@ -41,7 +41,7 @@ export default function Home() {
             className="text-black font-normal leading-[1.5]"
             style={{ fontSize: 'clamp(1.25rem, 2.5vw, 2rem)' }}
           >
-            我透過寫作與課程，幫助你建立一人公司。
+            我透過寫作與課程，幫助你建立 JK space。
           </p>
         </div>
       </section>
@@ -103,16 +103,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Products Section - Matching minimal aesthetic */}
+      {/* Projects Section - Matching minimal aesthetic */}
       <section className="bg-white py-24 md:py-36 lg:py-48 px-6">
         <div className="max-w-6xl mx-auto">
           <h2
             className="font-bold text-black mb-16 md:mb-24 lg:mb-32 text-center leading-[1.2] tracking-[-0.01em]"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
           >
-            精選課程
+            精選專案
           </h2>
-          <ProductList />
+          <ProjectCard />
         </div>
       </section>
     </>

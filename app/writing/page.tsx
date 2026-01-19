@@ -4,7 +4,7 @@ import Link from 'next/link';
 const articles = [
   {
     slug: 'build-one-person-business',
-    title: '如何用系統化思維建立你的一人公司',
+    title: '如何用系統化思維建立你的 JK space',
     date: '2024-01-15',
     excerpt: '多數人創業失敗的原因不是缺乏技能，而是缺乏系統。本文將帶你建立可持續的創業框架。',
   },

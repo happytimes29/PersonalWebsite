@@ -13,7 +13,7 @@ interface Product {
 const products: Product[] = [
   {
     id: '1',
-    title: '一人公司實戰課程',
+    title: 'JK space 實戰課程',
     description: '從零開始建立你的數位事業，學習系統化思維與執行框架。',
     price: 'NT$ 4,980',
     link: '/products/solo-business-course',

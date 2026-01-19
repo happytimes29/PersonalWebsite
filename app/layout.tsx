@@ -4,8 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 export const metadata: Metadata = {
-  title: '專注、系統、與數位自由',
-  description: '我透過寫作與課程，幫助你建立一人公司。',
+  title: 'JK space | 數位實驗室',
+  description: '我透過寫作與課程，幫助你建立 JK space。',
 };
 
 export default function RootLayout({
