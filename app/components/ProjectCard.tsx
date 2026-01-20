@@ -12,14 +12,14 @@ interface Project {
 const projects: Project[] = [
   {
     id: '1',
-    title: 'E-bike 系統研究',
-    description: '馬達耐用性測試與 6 軸感測器應用。',
-    link: '/projects/ebike-system',
+    title: 'AI 音樂頻道實踐',
+    description: '運用 AI 工具創作與發布音樂內容，探索創作自動化的可能性。',
+    link: '/projects/ai-music',
   },
   {
     id: '2',
-    title: 'AI 自動化實踐',
-    description: '基於 Dify 與 n8n 的個人工作流建立。',
+    title: '本地端 Dify 與 n8n 自動化流程',
+    description: '建立本地化 AI 工作流系統，整合 Dify 與 n8n 實現智能自動化。',
     link: '/projects/ai-automation',
   },
 ];

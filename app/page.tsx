@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import NewsletterSignup from './components/NewsletterSignup';
 import ProjectCard from './components/ProjectCard';
+import AI100Challenge from './components/AI100Challenge';
 
 // 測試用文章數據
 const recentArticles = [
@@ -50,6 +51,9 @@ export default function Home() {
       <section className="py-16 md:py-24 lg:py-32">
         <NewsletterSignup />
       </section>
+
+      {/* AI 100 Apps Challenge Section */}
+      <AI100Challenge />
 
       {/* Recent Articles Section - Enhanced hierarchy and spacing */}
       <section className="bg-white py-24 md:py-36 lg:py-48 px-6">
