@@ -9,22 +9,24 @@ interface Project {
   link?: string;
 }
 
-const projects: Project[] = [
-  {
-    id: '1',
-    title: 'AI 音樂頻道實踐',
-    description: '運用 AI 工具創作與發布音樂內容，探索創作自動化的可能性。',
-    link: '/projects/ai-music',
-  },
-  {
-    id: '2',
-    title: '本地端 Dify 與 n8n 自動化流程',
-    description: '建立本地化 AI 工作流系統，整合 Dify 與 n8n 實現智能自動化。',
-    link: '/projects/ai-automation',
-  },
-];
+const projects: Project[] = [];
 
 export default function ProjectCard() {
+  if (projects.length === 0) {
+    return (
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center py-16 md:py-24">
+          <p
+            className="text-black/40 font-light leading-relaxed"
+            style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}
+          >
+            即將推出
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-6xl mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">

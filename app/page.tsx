@@ -35,14 +35,14 @@ export default function Home() {
             className="font-bold text-black leading-[1.1] tracking-[-0.02em]"
             style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
           >
-            專注、系統、與數位自由
+            專注是唯一生產力
           </h1>
 
           <p
             className="text-black font-normal leading-[1.5]"
             style={{ fontSize: 'clamp(1.25rem, 2.5vw, 2rem)' }}
           >
-            我透過寫作與課程，幫助你建立 JK space。
+            我透過寫作與實作，終生學習
           </p>
         </div>
       </section>

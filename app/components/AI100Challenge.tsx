@@ -18,7 +18,7 @@ export default function AI100Challenge() {
   }));
 
   return (
-    <section className="bg-white py-24 md:py-36 lg:py-48 px-6">
+    <section id="ai-100-challenge" className="bg-white py-24 md:py-36 lg:py-48 px-6">
       <div className="max-w-7xl mx-auto">
         {/* 標題與進度 */}
         <div className="text-center mb-16 md:mb-24 lg:mb-32">
@@ -99,7 +99,7 @@ export default function AI100Challenge() {
             className="text-black/50 font-light leading-relaxed max-w-2xl mx-auto"
             style={{ fontSize: 'clamp(1rem, 1.8vw, 1.125rem)' }}
           >
-            挑戰自己在 100 天內建立 100 個 AI 應用，探索人工智慧的無限可能。
+            任何你覺得有趣的事物都可以親自做出來
           </p>
         </div>
       </div>

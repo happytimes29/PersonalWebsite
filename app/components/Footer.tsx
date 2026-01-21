@@ -1,5 +1,21 @@
 import Link from 'next/link';
-import { Github, AtSign } from 'lucide-react';
+
+interface SocialLink {
+  name: string;
+  label: string;
+  href: string;
+}
+
+const socialLinks: SocialLink[] = [
+  { name: 'GitHub', label: 'GH', href: '#' },
+  { name: 'Facebook', label: 'FB', href: '#' },
+  { name: 'X', label: 'X', href: '#' },
+  { name: 'Instagram', label: 'IG', href: '#' },
+  { name: 'Threads', label: 'TH', href: '#' },
+  { name: 'TikTok', label: 'TK', href: '#' },
+  { name: '抖音', label: '抖', href: '#' },
+  { name: '小紅書', label: '小', href: '#' },
+];
 
 export default function Footer() {
   return (
@@ -34,30 +50,27 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Social Links */}
-          <div className="space-y-6">
+          {/* Social Links - Minimal Grid Design */}
+          <div className="space-y-6 flex-1 md:max-w-md">
             <h3 className="text-black font-semibold text-sm uppercase tracking-wider">
               Connect
             </h3>
-            <div className="flex gap-6">
-              <Link
-                href="https://threads.net"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:opacity-60 transition-opacity duration-300"
-                aria-label="Threads"
-              >
-                <AtSign size={24} strokeWidth={1.5} />
-              </Link>
-              <Link
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:opacity-60 transition-opacity duration-300"
-                aria-label="GitHub"
-              >
-                <Github size={24} strokeWidth={1.5} />
-              </Link>
+            <div className="grid grid-cols-4 gap-3 sm:gap-4">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group aspect-square border border-black/10 flex items-center justify-center hover:border-black hover:bg-black transition-all duration-300"
+                  aria-label={social.name}
+                  title={social.name}
+                >
+                  <span className="text-black/60 group-hover:text-white font-medium text-xs sm:text-sm tracking-tight transition-colors duration-300">
+                    {social.label}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
