@@ -16,7 +16,8 @@
       "Bash(cat:*)",
       "Bash(npm i:*)",
       "Bash(npm uninstall:*)",
-      "Bash(unset ANTHROPIC_API_KEY)"
+      "Bash(unset ANTHROPIC_API_KEY)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

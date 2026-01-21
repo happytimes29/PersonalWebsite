@@ -1,22 +1,24 @@
+import AI100Challenge from '../components/AI100Challenge';
+import ProjectCard from '../components/ProjectCard';
+
 export default function ProjectsPage() {
   return (
-    <div className="bg-white py-16 md:py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 text-center">
-          Projects
-        </h1>
-        <p className="text-xl text-black text-center mb-16 font-light">
-          探索我的數位實驗與創作專案。
-        </p>
+    <>
+      {/* AI 100 Apps Challenge Section */}
+      <AI100Challenge />
 
-        <div className="space-y-12">
-          <div className="border-b border-gray-100 pb-12">
-            <p className="text-lg text-black leading-relaxed text-center">
-              專案內容即將推出...
-            </p>
-          </div>
+      {/* Projects Section */}
+      <section className="bg-white py-24 md:py-36 lg:py-48 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="font-bold text-black mb-16 md:mb-24 lg:mb-32 text-center leading-[1.2] tracking-[-0.01em]"
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+          >
+            精選專案
+          </h2>
+          <ProjectCard />
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
