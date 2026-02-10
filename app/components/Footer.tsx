@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { Github, Facebook, Twitter, Instagram, Video } from 'lucide-react';
+import { Github, Facebook, Twitter, Instagram } from 'lucide-react';
+import { FaThreads, FaTiktok } from 'react-icons/fa6';
+import { SiXiaohongshu } from 'react-icons/si';
 
 interface SocialLink {
   name: string;
@@ -31,36 +33,22 @@ const socialLinks: SocialLink[] = [
   {
     name: 'Threads',
     href: '#',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"/>
-        <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4c1.11 0 2.11-.45 2.83-1.17"/>
-      </svg>
-    )
+    icon: <FaThreads className="w-5 h-5" />
   },
   {
     name: 'TikTok',
     href: '#',
-    icon: <Video className="w-5 h-5" strokeWidth={1.5} />
+    icon: <FaTiktok className="w-5 h-5" />
   },
   {
     name: '抖音',
     href: '#',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9 7v8a4 4 0 1 0 4-4V3h4a5 5 0 0 0 5 5"/>
-      </svg>
-    )
+    icon: <FaTiktok className="w-5 h-5" />
   },
   {
     name: '小紅書',
     href: '#',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M8 8h8M8 12h8M8 16h4"/>
-      </svg>
-    )
+    icon: <SiXiaohongshu className="w-5 h-5" />
   },
 ];
 
