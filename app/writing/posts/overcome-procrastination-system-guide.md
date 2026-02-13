@@ -4,7 +4,7 @@ date: "2026-02-13"
 category: "AI 實踐"
 ---
 
-![拖延症系統化解決方案](/images/procrastination-cover.png)
+![晨霧中的河流，從靜止到流動](/images/procrastination-landscape.png)
 
 # 拖延不是你的錯，但告別它是你的選擇：一套從心態到系統的重構指南
 
