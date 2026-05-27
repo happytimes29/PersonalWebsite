@@ -17,8 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const article = getArticleBySlug(slug);
   if (!article) return { title: "Article Not Found | JK Space" };
-  const t = article.translations[locale as keyof typeof article.translations] ?? article.translations.en;
-  return { title: `${t.title} | JK Space`, description: t.excerpt };
+  return { title: `${article.title} | JK Space`, description: article.excerpt };
 }
 
 const CATEGORY_KEY_MAP = {
@@ -40,19 +39,13 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const t = await getTranslations("writing");
-  const localizedContent =
-    article.translations[locale as keyof typeof article.translations] ??
-    article.translations.en;
 
   const { prev, next } = getAdjacentArticles(slug);
   const color = CATEGORY_COLOR[article.category];
   const catLabel = t(CATEGORY_KEY_MAP[article.category]);
 
   const getPrevNext = (a: typeof article) => {
-    const loc =
-      a.translations[locale as keyof typeof a.translations] ??
-      a.translations.en;
-    return loc.title;
+    return a.title;
   };
 
   return (
@@ -66,8 +59,8 @@ export default async function ArticlePage({ params }: Props) {
           <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-mono font-medium mb-5" style={{ color, backgroundColor: `color-mix(in srgb, ${color} 10%, transparent)`, border: `1px solid color-mix(in srgb, ${color} 25%, transparent)` }}>
             {catLabel}
           </span>
-          <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-3">{localizedContent.title}</h1>
-          {localizedContent.subtitle && <p className="text-lg mb-5" style={{ color: "var(--color-text-muted)" }}>{localizedContent.subtitle}</p>}
+          <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-3">{article.title}</h1>
+          {article.subtitle && <p className="text-lg mb-5" style={{ color: "var(--color-text-muted)" }}>{article.subtitle}</p>}
           <div className="flex flex-wrap items-center gap-5 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
             <span className="flex items-center gap-1.5 text-xs font-mono" style={{ color: "var(--color-text-muted)" }}><Calendar size={12} />{article.date}</span>
             <span className="flex items-center gap-1.5 text-xs font-mono" style={{ color: "var(--color-text-muted)" }}><Clock size={12} />{t("minuteRead", { time: article.readingTime })}</span>
@@ -75,7 +68,7 @@ export default async function ArticlePage({ params }: Props) {
         </header>
 
         <div className="mb-10" style={{ height: "1px", backgroundColor: "rgba(255,255,255,0.06)" }} />
-        <ArticleContent content={localizedContent.content} />
+        <ArticleContent content={article.content} />
         <div className="mt-12 mb-8" style={{ height: "1px", backgroundColor: "rgba(255,255,255,0.06)" }} />
 
         {article.tags.length > 0 && (
