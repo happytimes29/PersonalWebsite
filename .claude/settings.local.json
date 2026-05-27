@@ -1,26 +1,27 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --turbopack --use-npm --skip-git)",
-      "Bash(npm install)",
-      "Bash(npm run dev:*)",
-      "Skill(document-skills:frontend-design)",
-      "Skill(document-skills:web-artifacts-builder)",
-      "Skill(document-skills:doc-coauthoring)",
-      "Bash(npm install:*)",
-      "Bash(mkdir:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(git tag:*)",
-      "Bash(cat:*)",
-      "Bash(npm i:*)",
-      "Bash(npm uninstall:*)",
-      "Bash(unset ANTHROPIC_API_KEY)",
-      "Bash(npm run build:*)",
-      "Bash(find:*)"
-    ],
-    "deny": [],
-    "ask": []
+      "Bash(node -e ' *)",
+      "Bash(npm --version)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes --name jk-space)",
+      "Bash(npm install *)",
+      "Bash(npm view *)",
+      "Bash(node -e \"const d=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const v=JSON.parse\\(d\\); console.log\\(v.filter\\(x=>x.startsWith\\('15.'\\)\\).slice\\(-5\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(npm audit *)",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "Bash(npm run *)",
+      "Bash(curl *)",
+      "Bash(node *)",
+      "Bash(npm list *)",
+      "Bash(npx playwright *)",
+      "Bash(Start-Sleep -Seconds 5)",
+      "Bash(Get-Content \"C:\\\\Users\\\\joey.kuo\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\D--Coding-01-PersonalWeb\\\\f02b2ca5-0747-445f-ad42-613c6a235352\\\\tasks\\\\byhf0w9jo.output\")",
+      "Bash(Select-Object -Last 20)",
+      "Bash(mkdir -p \"D:\\\\Coding\\\\01.PersonalWeb\\\\src\\\\app\\\\[locale]\\\\skills\")",
+      "Bash(mkdir -p \"D:\\\\Coding\\\\01.PersonalWeb\\\\src\\\\app\\\\[locale]\\\\portfolio\\\\[slug]\")",
+      "Bash(mkdir -p \"D:\\\\Coding\\\\01.PersonalWeb\\\\src\\\\app\\\\[locale]\\\\writing\\\\[slug]\")"
+    ]
   }
 }

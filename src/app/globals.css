@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #030712;
+  --color-bg-surface: #111827;
+  --color-brand-blue: #00e5ff;
+  --color-brand-indigo: #3b82f6;
+  --color-text-primary: #f9fafb;
+  --color-text-muted: #9ca3af;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+  }
+}
+
+/* ── Syntax highlighting (highlight.js GitHub Dark theme tokens) ── */
+.hljs { color: #e6edf3; background: transparent; }
+.hljs-comment,
+.hljs-quote         { color: #6e7681; font-style: italic; }
+.hljs-keyword,
+.hljs-selector-tag  { color: #ff7b72; }
+.hljs-string,
+.hljs-attr,
+.hljs-addition      { color: #a5d6ff; }
+.hljs-number,
+.hljs-literal       { color: #79c0ff; }
+.hljs-function,
+.hljs-title,
+.hljs-title\.function_ { color: #d2a8ff; }
+.hljs-built_in,
+.hljs-builtin-name  { color: #d2a8ff; }
+.hljs-variable,
+.hljs-name          { color: #ffa657; }
+.hljs-type,
+.hljs-class         { color: #f0883e; }
+.hljs-meta,
+.hljs-regexp        { color: #7ee787; }
+.hljs-property      { color: #79c0ff; }
+.hljs-symbol        { color: #ff7b72; }
+.hljs-deletion      { color: #ffa198; }
+.hljs-subst,
+.hljs-params        { color: #e6edf3; }
+.hljs-section       { color: #1f6feb; font-weight: bold; }
+
+@layer utilities {
+  .glow-blue {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+  }
+
+  .glow-blue-lg {
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.4), 0 0 60px rgba(0, 229, 255, 0.15);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  }
+
+  .glass {
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(3, 7, 18, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}

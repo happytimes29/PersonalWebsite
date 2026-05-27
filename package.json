@@ -1,5 +1,5 @@
 {
-  "name": "personal-website",
+  "name": "jk-space",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,25 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3",
-    "lucide-react": "^0.562.0",
-    "next": "^15.1.4",
+    "@supabase/supabase-js": "^2.49.4",
+    "framer-motion": "^12.12.1",
+    "highlight.js": "^11.11.1",
+    "lucide-react": "^0.511.0",
+    "next": "15.5.18",
+    "next-intl": "^4.12.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1",
-    "resend": "^6.7.0"
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@types/node": "^22",
+    "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.60.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.20",
     "eslint": "^9",
-    "eslint-config-next": "^15.1.4",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
+    "eslint-config-next": "15.5.18",
+    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }

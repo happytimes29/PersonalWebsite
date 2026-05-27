@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal brand & portfolio — hardware engineer & technologist" />
+  <title>Joey Kuo — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
+  <style>
+    /* Animate utility — handled by JS observer */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity var(--duration-slow) var(--ease-out),
+        transform var(--duration-slow) var(--ease-out);
+    }
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    [data-animate][data-delay="1"] { transition-delay: 100ms; }
+    [data-animate][data-delay="2"] { transition-delay: 200ms; }
+    [data-animate][data-delay="3"] { transition-delay: 300ms; }
+    [data-animate][data-delay="4"] { transition-delay: 400ms; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav" role="navigation" aria-label="主選單">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">Joey<span>.kuo</span></a>
+
+      <div class="nav__links" id="nav-links">
+        <a href="#about"    class="nav__link">關於我</a>
+        <a href="#skills"   class="nav__link">專業領域</a>
+        <a href="#projects" class="nav__link">專案作品</a>
+        <a href="#contact"  class="nav__cta">聯絡我</a>
+      </div>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+
+        <div class="hero__badge" data-animate>
+          <span class="hero__badge-dot"></span>
+          目前接受新機會
+        </div>
+
+        <h1 class="hero__name" data-animate data-delay="1">Joey Kuo</h1>
+
+        <h2 class="hero__headline" data-animate data-delay="2">
+          聚焦於<span class="hero__highlight">硬體研發</span>與<br />
+          <span class="hero__highlight">AI 自動化應用</span>的資深工程師
+        </h2>
+
+        <p class="hero__bio" data-animate data-delay="3">
+          橫跨 PCB 設計、嵌入式系統與 AI 整合應用，<br class="hide-mobile" />
+          打造可靠、高效且具前瞻性的工程解決方案。
+        </p>
+
+        <div class="hero__actions" data-animate data-delay="4">
+          <a href="#projects" class="btn btn--glow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            瀏覽我的最新專案
+          </a>
+          <a href="#contact" class="btn btn--ghost">聯絡我</a>
+        </div>
+
+        <div class="hero__scroll" data-animate data-delay="4" aria-hidden="true">
+          <span class="hero__scroll-line"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── About ── -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <p class="section__label">About</p>
+          <h2 class="section__title">Who I Am</h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__text" data-animate>
+            <p>
+              <!-- TODO: 替換成你的真實背景介紹 -->
+              I'm a hardware engineer with a passion for building things that bridge the physical and digital worlds. With experience spanning <strong>PCB design, embedded systems, and system architecture</strong>, I bring a first-principles mindset to every project.
+            </p>
+            <p>
+              When I'm not designing circuits or writing firmware, I explore how technology can create meaningful impact — from personal productivity tools to open-source hardware projects.
+            </p>
+          </div>
+          <div class="about__stats" data-animate data-delay="1">
+            <!-- TODO: 替換成你的真實數據 -->
+            <div class="stat-card">
+              <div class="stat-card__value">3+</div>
+              <div class="stat-card__label">Years of Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">12+</div>
+              <div class="stat-card__label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">5+</div>
+              <div class="stat-card__label">Tech Domains</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">100%</div>
+              <div class="stat-card__label">Commitment to Quality</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Skills / Expertise ── -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <p class="section__label">Expertise</p>
+          <h2 class="section__title">專業領域</h2>
+          <p class="section__subtitle">
+            跨越硬體研發、AI 應用與系統架構三個維度，打造端到端的工程解決方案。
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+
+          <!-- Card 1: 無線通訊與硬體研發 -->
+          <div class="expertise-card" data-animate>
+            <div class="expertise-card__icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                <circle cx="12" cy="20" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="expertise-card__content">
+              <h3 class="expertise-card__title">無線通訊與硬體研發</h3>
+              <p class="expertise-card__desc">
+                從射頻電路設計、天線調諧到 PCB 全流程佈局，具備 FCC／CE 驗證實務經驗，熟悉 BLE、Wi-Fi、LoRa 等主流無線協定的整合與測試。
+              </p>
+              <div class="expertise-card__tags">
+                <span class="skill-tag">RF Design</span>
+                <span class="skill-tag">BLE / Wi-Fi</span>
+                <span class="skill-tag">PCB Layout</span>
+                <span class="skill-tag">KiCad</span>
+                <span class="skill-tag">Signal Integrity</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: AI 工作流自動化 -->
+          <div class="expertise-card" data-animate data-delay="1">
+            <div class="expertise-card__icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+                <path d="M7 8h2M15 8h2M11 8h.01M7 12h10"/>
+              </svg>
+            </div>
+            <div class="expertise-card__content">
+              <h3 class="expertise-card__title">AI 工作流自動化</h3>
+              <p class="expertise-card__desc">
+                運用 LLM API、RAG 架構與 Prompt Engineering，將重複性工程任務轉化為全自動化流程，顯著提升設計審查與文件生成效率。
+              </p>
+              <div class="expertise-card__tags">
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">OpenAI API</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">Prompt Eng.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: 產品架構設計 -->
+          <div class="expertise-card" data-animate data-delay="2">
+            <div class="expertise-card__icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="8" rx="2"/>
+                <rect x="2" y="14" width="20" height="8" rx="2"/>
+                <path d="M6 6h.01M6 18h.01"/>
+              </svg>
+            </div>
+            <div class="expertise-card__content">
+              <h3 class="expertise-card__title">產品架構設計</h3>
+              <p class="expertise-card__desc">
+                從需求定義、系統分層到跨功能協作，建立可擴展的硬體與韌體架構，兼顧量產可製性（DFM）與後續維護成本。
+              </p>
+              <div class="expertise-card__tags">
+                <span class="skill-tag">System Design</span>
+                <span class="skill-tag">DFM</span>
+                <span class="skill-tag">Firmware</span>
+                <span class="skill-tag">RTOS</span>
+                <span class="skill-tag">STM32</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Projects ── -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <p class="section__label">Work</p>
+          <h2 class="section__title">精選專案</h2>
+          <p class="section__subtitle">
+            橫跨 AI 應用開發與工程自動化工具，每個專案都源自真實問題的第一線解決需求。
+          </p>
+        </div>
+
+        <div class="projects__grid">
+
+          <!-- Project 1: AI 100 應用挑戰工具 -->
+          <article class="project-card" data-animate>
+            <div class="project-card__preview project-card__preview--ai">
+              <div class="project-card__preview-grid" aria-hidden="true"></div>
+              <div class="project-card__preview-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
+                  <circle cx="7.5" cy="14.5" r="1.5" fill="currentColor"/>
+                  <circle cx="16.5" cy="14.5" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="project-card__meta">
+                <span class="project-card__category">AI 應用</span>
+                <a href="#" class="project-card__repo" aria-label="在 GitHub 查看">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">AI 100 應用挑戰工具</h3>
+              <p class="project-card__desc">
+                以 100 天為框架，系統化記錄與展示每日 AI 應用實作的挑戰型平台。整合 LLM API 自動生成每日摘要與技術亮點，並以結構化資料追蹤學習進度與技術覆蓋率。
+              </p>
+              <div class="project-card__stack">
+                <span class="project-card__tag">Python</span>
+                <span class="project-card__tag">LangChain</span>
+                <span class="project-card__tag">Streamlit</span>
+                <span class="project-card__tag">OpenAI API</span>
+                <span class="project-card__tag">JSON</span>
+              </div>
+              <div class="project-card__footer">
+                <a href="#" class="project-card__cta">
+                  查看專案
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                <span class="project-card__status project-card__status--active">持續更新中</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: 自動化 BOM 表比對系統 -->
+          <article class="project-card" data-animate data-delay="1">
+            <div class="project-card__preview project-card__preview--bom">
+              <div class="project-card__preview-grid" aria-hidden="true"></div>
+              <div class="project-card__preview-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="8" y1="13" x2="16" y2="13"/>
+                  <line x1="8" y1="17" x2="16" y2="17"/>
+                  <line x1="8" y1="9" x2="10" y2="9"/>
+                </svg>
+              </div>
+              <div class="project-card__meta">
+                <span class="project-card__category">工程工具</span>
+                <a href="#" class="project-card__repo" aria-label="在 GitHub 查看">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">自動化 BOM 表比對系統</h3>
+              <p class="project-card__desc">
+                自動解析多份 Excel 格式的電子元件清單（BOM），跨欄位智能比對料號、規格與供應商差異，輸出結構化差異報告，將原本數小時的人工審查縮短至數分鐘。
+              </p>
+              <div class="project-card__stack">
+                <span class="project-card__tag">Python</span>
+                <span class="project-card__tag">pandas</span>
+                <span class="project-card__tag">openpyxl</span>
+                <span class="project-card__tag">tkinter</span>
+                <span class="project-card__tag">difflib</span>
+              </div>
+              <div class="project-card__footer">
+                <a href="#" class="project-card__cta">
+                  查看專案
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                <span class="project-card__status project-card__status--done">已完成</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Contact ── -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact__inner">
+          <div data-animate>
+            <div class="section__header">
+              <p class="section__label">Contact</p>
+              <h2 class="section__title">Let's Build<br />Something Together</h2>
+              <p class="section__subtitle">
+                Whether it's a project collaboration, a job opportunity, or just a technical discussion — I'm happy to connect.
+              </p>
+            </div>
+            <div class="contact__links">
+              <a href="mailto:nightdeale2012@gmail.com" class="contact__link">
+                <span class="contact__link-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </span>
+                nightdeale2012@gmail.com
+              </a>
+              <!-- TODO: 替換成你的真實社交連結 -->
+              <a href="#" class="contact__link">
+                <span class="contact__link-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                </span>
+                GitHub — @yourhandle
+              </a>
+              <a href="#" class="contact__link">
+                <span class="contact__link-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </span>
+                LinkedIn — Joey Kuo
+              </a>
+            </div>
+          </div>
+          <div data-animate data-delay="1">
+            <!-- Optional: add a contact form here later -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">
+        &copy; 2026 <span>Joey Kuo</span>. Designed & built from scratch.
+      </p>
+      <p class="footer__copy">
+        Made with <span>&#9632;</span> in Taiwan
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
